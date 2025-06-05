@@ -5,59 +5,59 @@ dataset = mtcars
 dataset$cyl = as.factor(dataset$cyl)
 
 # Adding regression lines based on multiple groups
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
   geom_smooth(method = lm)
 
-# Removing the confidence interval
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+# Removing the confidence intervals
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se = FALSE )
+  geom_smooth(method=lm, se=FALSE)
 
-# Extending the regression line
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+# Extending the regression lines
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se = FALSE, fullrange=TRUE )
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)
 
-# Filling the color of confidence bands
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+# Filling the color of confidence bands 
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, aes(fill=cyl))
+  geom_smooth(method=lm, aes(fill=cyl))
 
 # Changing point shapes manually
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se=FALSE, fullrange = TRUE)+
-  scale_shape_manual(values = c(3, 16, 17))+
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)+
+  scale_shape_manual(values=c(3,16,17))+
   theme(legend.position = "top")
 
 # Changing point colors manually
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se=FALSE, fullrange = TRUE)+
-  scale_shape_manual(values = c(3, 16, 17))+
-  scale_color_manual(values = c('darkblue', 'red', 'yellow'))+
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)+
+  scale_shape_manual(values=c(3,16,17))+
+  scale_color_manual(values=c('darkblue','grey','orange'))+
   theme(legend.position = "top")
 
-  
 # Customizing scatter plots
-ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se=FALSE, fullrange = TRUE)+
-  scale_shape_manual(values = c(3, 16, 17))+
-  scale_color_manual(values = c('darkblue', 'red', 'yellow'))+
-  labs(title = "miles per gallon \naccodring to the weight",
-       x="weight", y="miles/Gallon")+
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)+
+  scale_shape_manual(values=c(3,16,17))+
+  scale_color_manual(values=c('darkblue','grey','orange'))+
+  labs(title="Miles per gallon \naccording to the weight",
+       x="Weight", y="Miles/Gallon")+
   theme(legend.position = "top")
 
 # Customizing themes
-plot = ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape = cyl)) +
+plot = ggplot(dataset, aes(x=wt, y=mpg, color=cyl, shape=cyl))+
   geom_point()+
-  geom_smooth(method = lm, se=FALSE, fullrange = TRUE)+
-  scale_shape_manual(values = c(3, 16, 17))+
-  scale_color_manual(values = c('darkblue', 'red', 'yellow'))+
-  labs(title = "miles per gallon \naccodring to the weight",
-       x="weight", y="miles/Gallon")+
+  geom_smooth(method=lm, se=FALSE, fullrange=TRUE)+
+  scale_shape_manual(values=c(3,16,17))+
+  scale_color_manual(values=c('darkblue','grey','orange'))+
+  labs(title="Miles per gallon \naccording to the weight",
+       x="Weight", y="Miles/Gallon")+
   theme(legend.position = "top")
+
 plot + theme_classic()
 plot + theme_minimal()
