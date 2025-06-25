@@ -80,6 +80,6 @@ ggplot(dataset, aes(x = dose, y = len, fill = dose)) +
   geom_bar(stat = "identity", color = "black") +
   scale_color_manual(values = c("#85713a", "#c72ce6", "#f00a24")) + 
   theme(legend.position = "top")
-
+changedFiles()
 
 
