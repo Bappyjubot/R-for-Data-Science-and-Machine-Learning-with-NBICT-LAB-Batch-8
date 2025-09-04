@@ -3,6 +3,7 @@ mydata = ToothGrowth
 
 # Converting the variable dose from a numeric to a factor variable
 mydata$dose = as.factor(mydata$dose)
+View(mydata)
 
 library(ggplot2)
 
